@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Job Portal</h2>
+        
+        <div id="role-selection">
+            <h3>Select Role</h3>
+            <button onclick="showLogin('user')">User</button>
+            <button onclick="showLogin('admin')">Admin</button>
+        </div>
+
+        <div id="login-section" style="display: none;">
+            <h3>Login as <span id="selected-role"></span></h3>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <script>
+        function showLogin(role) {
+            document.getElementById("selected-role").innerText = role.toUpperCase();
+            document.getElementById("role-selection").style.display = "none";
+            document.getElementById("login-section").style.display = "block";
+        }
+
+        function login() {
+            let role = document.getElementById("selected-role").innerText.toLowerCase();
+            window.location.href = role + ".html"; 
+        }
+    </script>
+</body>
+</html>

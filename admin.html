@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Login</h2>
+    <input type="text" id="adminUsername" placeholder="Username">
+    <input type="password" id="adminPassword" placeholder="Password">
+    <button onclick="loginAdmin()">Login</button>
+
+    <div id="adminPanel" class="hidden">
+      <h3>Welcome, Admin!</h3>
+      <h4>Add a Job</h4>
+      <input type="text" id="jobTitle" placeholder="Job Title" required>
+      <input type="text" id="company" placeholder="Company" required>
+      <input type="text" id="location" placeholder="Location" required>
+      <textarea id="description" placeholder="Job Description" required></textarea>
+      <input type="number" id="vacancies" placeholder="Vacancies" required>
+      <button onclick="addJob()">Add Job</button>
+      <p id="jobAddedMsg" class="success-msg hidden">🎉 Job added successfully!</p>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
